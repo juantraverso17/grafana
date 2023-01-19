@@ -1,9 +1,5 @@
 version: "3.7"
 
-volumes:
-  grafana-data:
-  prometheus-data:    
-
 services:
   grafana:
     image: grafana/grafana:8.0.6
@@ -74,6 +70,42 @@ services:
     networks:
       - uw2-frontend
       - uw2-backend
+
+  loki:
+    image: grafana/loki:2.0.0
+    container_name: loki
+    restart: unless-stopped
+    volumes:
+    - ./loki-config.yml:/mnt/config/loki-config.yml
+    - loki-data:/loki
+    ports:
+    - 3100:3100
+    command: 
+    - '-config.file=/mnt/config/loki-config.yml'
+    networks:
+      - uw2-frontend
+      - uw2-backend
+
+  promtail:
+    image: grafana/promtail:2.3.0
+    container_name: promtail
+    restart: unless-stopped
+    volumes:
+    - /var/log/:/var/log/:ro
+    - /home/:/home_server:ro
+    - /root/:/root_user:ro
+    - ./promtail.yml:/etc/promtail/promtail.yml
+    - promtail-data:/tmp
+    command: -config.file=/etc/promtail/promtail.yml
+    networks:
+      - uw2-frontend
+      - uw2-backend
+
+volumes:
+  grafana-data:
+  prometheus-data:
+  loki-data:
+  promtail-data:
 
 networks:
   uw2-frontend:
