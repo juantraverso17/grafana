@@ -101,6 +101,15 @@ services:
       - uw2-frontend
       - uw2-backend
 
+  docker_exporter:
+    image: prometheusnet/docker_exporter
+    container_name: docker_exporter
+    restart: always
+    volumes:
+        - '/var/run/docker.sock:/var/run/docker.sock'
+    ports:
+        - '9417:9417'
+
 volumes:
   grafana-data:
   prometheus-data:
