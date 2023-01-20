@@ -101,14 +101,13 @@ services:
       - uw2-frontend
       - uw2-backend
 
-  docker_exporter:
-    image: prometheusnet/docker_exporter
-    container_name: docker_exporter
-    restart: always
+  docker_state_exporter:
+    image: karugaru/docker_state_exporter
+    container_name: docker_state_exporter
     volumes:
         - '/var/run/docker.sock:/var/run/docker.sock'
     ports:
-        - '9417:9417'
+      - "9417:8080"
     networks:
       - uw2-frontend
       - uw2-backend
