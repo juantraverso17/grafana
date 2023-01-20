@@ -109,6 +109,9 @@ services:
         - '/var/run/docker.sock:/var/run/docker.sock'
     ports:
         - '9417:9417'
+    networks:
+      - uw2-frontend
+      - uw2-backend
 
 volumes:
   grafana-data:
