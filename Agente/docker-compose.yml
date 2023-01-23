@@ -1,5 +1,8 @@
 version: "3.7"
 
+volumes:
+  prometheus-data:
+
 services:
   prometheus:
     image: prom/prometheus:v2.28.1
@@ -60,8 +63,3 @@ services:
         - '/var/run/docker.sock:/var/run/docker.sock'
     ports:
       - "9417:8080"
-
-volumes:
-  prometheus-data:
-  loki-data:
-  promtail-data:
