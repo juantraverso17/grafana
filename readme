@@ -1,0 +1,3 @@
+1. Copiar el fichero daemon.json a /etc/docker/daemon.json que permite enviar logs a Loki
+2. Editar el fichero .env y adaptarlo a nuestro entorno
+3. Levantar los contenedores
