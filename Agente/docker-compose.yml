@@ -1,18 +1,6 @@
 version: "3.7"
 
 services:
-  grafana:
-    image: grafana/grafana:8.0.6
-    container_name: grafana
-    restart: unless-stopped
-    volumes:
-    - grafana-data:/var/lib/grafana
-    ports:
-    - 3000:3000
-    networks:
-      - uw2-frontend
-      - uw2-backend
-
   prometheus:
     image: prom/prometheus:v2.28.1
     container_name: prometheus
@@ -27,9 +15,6 @@ services:
     - '--storage.tsdb.path=/prometheus'
     - '--storage.tsdb.retention.time=1y'
     - '--web.enable-lifecycle'
-    networks:
-      - uw2-frontend
-      - uw2-backend
 
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
@@ -43,18 +28,6 @@ services:
     pid: host
     volumes:
     - '/:/host:ro,rslave'
-#    ###### windows
-#    volumes:
-#      - /proc:/host/proc:ro
-#      - /sys:/host/sys:ro
-#    command: 
-#      - '--path.procfs=/host/proc' 
-#      - '--path.sysfs=/host/sys'
-#      - --collector.filesystem.ignored-mount-points
-#      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
-    networks:
-      - uw2-frontend
-      - uw2-backend
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
@@ -67,24 +40,6 @@ services:
     - /var/run:/var/run:rw
     - /sys:/sys:ro
     - /var/lib/docker/:/var/lib/docker:ro
-    networks:
-      - uw2-frontend
-      - uw2-backend
-
-  loki:
-    image: grafana/loki:2.0.0
-    container_name: loki
-    restart: unless-stopped
-    volumes:
-    - ./loki-config.yml:/mnt/config/loki-config.yml
-    - loki-data:/loki
-    ports:
-    - 3100:3100
-    command: 
-    - '-config.file=/mnt/config/loki-config.yml'
-    networks:
-      - uw2-frontend
-      - uw2-backend
 
   promtail:
     image: grafana/promtail:2.3.0
@@ -96,10 +51,7 @@ services:
     - /root/:/root_user:ro
     - ./promtail.yml:/etc/promtail/promtail.yml
     - promtail-data:/tmp
-    command: -config.file=/etc/promtail/promtail.yml
-    networks:
-      - uw2-frontend
-      - uw2-backend
+    command: -config.file=/etc/promtail/promtail.yml -config.expand-env=true # env vars
 
   docker_state_exporter:
     image: karugaru/docker_state_exporter
@@ -108,20 +60,8 @@ services:
         - '/var/run/docker.sock:/var/run/docker.sock'
     ports:
       - "9417:8080"
-    networks:
-      - uw2-frontend
-      - uw2-backend
 
 volumes:
-  grafana-data:
   prometheus-data:
   loki-data:
   promtail-data:
-
-networks:
-  uw2-frontend:
-    name: uw2-frontend
-    external: true
-  uw2-backend:
-    name: uw2-backend
-    external: true
