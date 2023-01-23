@@ -2,6 +2,7 @@ version: "3.7"
 
 volumes:
   prometheus-agente-data:
+  promtail-data:
 
 services:
   prometheus:
