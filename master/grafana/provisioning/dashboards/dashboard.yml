@@ -2,6 +2,6 @@ apiVersion: 1
  
 providers:
   - name: 'Accusys Uniweb2'
-    folder: 'General'
+    folder: 'Accusys'
     options:
       path: /etc/grafana/provisioning/dashboards
