@@ -1,17 +1,17 @@
 version: "3.7"
 
 volumes:
-  prometheus-agente-data:
+  prometheus-data:
   promtail-data:
 
 services:
   prometheus:
     image: prom/prometheus:v2.28.1
-    container_name: prometheus-agente
+    container_name: prometheus
     restart: unless-stopped
     volumes:
     - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    - prometheus-agente-data:/prometheus
+    - prometheus-data:/prometheus
     ports:
     - 9090:9090
     command:
@@ -22,7 +22,7 @@ services:
 
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
-    container_name: node_exporter-agente
+    container_name: node_exporter
     restart: unless-stopped
     ports:
     - 9100:9100
@@ -35,7 +35,7 @@ services:
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
-    container_name: cadvisor-agente
+    container_name: cadvisor
     restart: unless-stopped
     expose:
     - 8080
@@ -47,7 +47,7 @@ services:
 
   promtail:
     image: grafana/promtail:2.3.0
-    container_name: promtail-agente
+    container_name: promtail
     restart: unless-stopped
     volumes:
     - /var/log/:/var/log/:ro

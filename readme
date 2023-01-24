@@ -1,3 +1,4 @@
-1. Copiar el fichero daemon.json a /etc/docker/daemon.json que permite enviar logs a Loki
+1. Copiar el fichero daemon.json a /etc/docker/daemon.json
+2. Reiniciar el servicio de docker con "sudo systemctl restart docker"
 2. Editar el fichero .env y adaptarlo a nuestro entorno
 3. Levantar los contenedores

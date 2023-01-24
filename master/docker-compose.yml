@@ -6,7 +6,7 @@ volumes:
   loki-master-data:
 
 services:
-  grafana:
+  grafana-master:
     image: grafana/grafana:8.0.6
     container_name: grafana-master
     restart: unless-stopped
@@ -15,7 +15,7 @@ services:
     ports:
     - 3000:3000
 
-  prometheus:
+  prometheus-master:
     image: prom/prometheus:v2.28.1
     container_name: prometheus-master
     restart: unless-stopped
@@ -23,14 +23,14 @@ services:
     - ./prometheus.yml:/etc/prometheus/prometheus.yml
     - prometheus-master-data:/prometheus
     ports:
-    - 9090:9090
+    - 9091:9090
     command:
     - '--config.file=/etc/prometheus/prometheus.yml'
     - '--storage.tsdb.path=/prometheus'
     - '--storage.tsdb.retention.time=1y'
     - '--web.enable-lifecycle'
 
-  loki:
+  loki-master:
     image: grafana/loki:2.0.0
     container_name: loki-master
     restart: unless-stopped
