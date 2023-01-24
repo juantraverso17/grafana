@@ -3,9 +3,7 @@ apiVersion: 1
 datasources:
   - name: Prometheus
     type: prometheus
-    access: proxy
-    url: prometheus-master:9091
+    url: prometheus-master:9090
   - name: Loki
     type: loki
-    access: proxy
     url: loki-master:3100
