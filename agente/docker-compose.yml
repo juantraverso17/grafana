@@ -59,7 +59,7 @@ services:
 
   docker_state_exporter:
     image: karugaru/docker_state_exporter
-    container_name: docker_state_exporter-agente
+    container_name: docker_state_exporter
     volumes:
         - '/var/run/docker.sock:/var/run/docker.sock'
     ports:
