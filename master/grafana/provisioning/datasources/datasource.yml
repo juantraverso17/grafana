@@ -5,3 +5,7 @@ datasources:
     type: prometheus
     access: proxy
     url: prometheus-master:9091
+  - name: Loki
+    type: loki
+    access: proxy
+    url: loki-master:3100
