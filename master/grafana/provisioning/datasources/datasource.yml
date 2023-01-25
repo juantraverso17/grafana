@@ -28,41 +28,9 @@ datasources:
     # <string> Sets the data source's URL, including the
     # port.
     url: http://prometheus-master:9090
-    # <string> Sets the database user, if necessary.
-    user:
-    # <string> Sets the database name, if necessary.
-    database:
-    # <bool> Enables basic authorization.
-    basicAuth:
-    # <string> Sets the basic authorization username.
-    basicAuthUser:
-    # <bool> Enables credential headers.
-    withCredentials:
-    # <bool> Toggles whether the data source is pre-selected
     # for new panels. You can set only one default
     # data source per organization.
     isDefault: 1
-    # <map> Fields to convert to JSON and store in jsonData.
-    jsonData:
-      # <string> Defines the Graphite service's version.
-      graphiteVersion: '1.1'
-      # <bool> Enables TLS authentication using a client
-      # certificate configured in secureJsonData.
-      tlsAuth: true
-      # <bool> Enables TLS authentication using a CA
-      # certificate.
-      tlsAuthWithCACert: true
-    # <map> Fields to encrypt before storing in jsonData.
-    secureJsonData:
-      # <string> Defines the CA cert, client cert, and
-      # client key for encrypted authentication.
-      tlsCACert: '...'
-      tlsClientCert: '...'
-      tlsClientKey: '...'
-      # <string> Sets the database password, if necessary.
-      password:
-      # <string> Sets the basic authorization password.
-      basicAuthPassword:
     version: 1
     # <bool> Allows users to edit data sources from the
     # Grafana UI.
@@ -88,41 +56,9 @@ datasources:
     # <string> Sets the data source's URL, including the
     # port.
     url: http://loki-master:3100
-    # <string> Sets the database user, if necessary.
-    user:
-    # <string> Sets the database name, if necessary.
-    database:
-    # <bool> Enables basic authorization.
-    basicAuth:
-    # <string> Sets the basic authorization username.
-    basicAuthUser:
-    # <bool> Enables credential headers.
-    withCredentials:
-    # <bool> Toggles whether the data source is pre-selected
     # for new panels. You can set only one default
     # data source per organization.
     isDefault: 0
-    # <map> Fields to convert to JSON and store in jsonData.
-    jsonData:
-      # <string> Defines the Graphite service's version.
-      graphiteVersion: '1.1'
-      # <bool> Enables TLS authentication using a client
-      # certificate configured in secureJsonData.
-      tlsAuth: true
-      # <bool> Enables TLS authentication using a CA
-      # certificate.
-      tlsAuthWithCACert: true
-    # <map> Fields to encrypt before storing in jsonData.
-    secureJsonData:
-      # <string> Defines the CA cert, client cert, and
-      # client key for encrypted authentication.
-      tlsCACert: '...'
-      tlsClientCert: '...'
-      tlsClientKey: '...'
-      # <string> Sets the database password, if necessary.
-      password:
-      # <string> Sets the basic authorization password.
-      basicAuthPassword:
     version: 1
     # <bool> Allows users to edit data sources from the
     # Grafana UI.
