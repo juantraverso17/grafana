@@ -87,7 +87,7 @@ datasources:
     uid: po2i3u5
     # <string> Sets the data source's URL, including the
     # port.
-    url: http://loki-master:9090
+    url: http://loki-master:3100
     # <string> Sets the database user, if necessary.
     user:
     # <string> Sets the database name, if necessary.
