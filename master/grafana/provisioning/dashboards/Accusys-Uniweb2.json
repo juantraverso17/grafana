@@ -77,7 +77,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "OK",
       "fieldConfig": {
@@ -149,7 +149,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "avg(time() - node_boot_time_seconds{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"})",
@@ -169,7 +169,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -236,7 +236,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -255,7 +255,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -322,7 +322,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(1 - (node_memory_MemAvailable_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",} / (node_memory_MemTotal_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",})))* 100",
@@ -340,7 +340,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -407,7 +407,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(node_filesystem_size_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"}-node_filesystem_free_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"})*100 /(node_filesystem_avail_bytes {cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"}+(node_filesystem_size_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"}-node_filesystem_free_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"}))",
@@ -425,7 +425,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -511,7 +511,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum(rate(container_cpu_usage_seconds_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",image!=\"\"}[1m])) by (id,name)",
@@ -532,7 +532,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -602,7 +602,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "count(rate(container_last_seen{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\", name!=\"\"}[5m]))",
@@ -618,7 +618,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -684,7 +684,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_hwmon_temp_celsius{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -703,7 +703,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -769,7 +769,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "count(node_cpu_seconds_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\", mode='system'})",
@@ -788,7 +788,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -855,7 +855,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -875,7 +875,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -942,7 +942,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -962,7 +962,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -1030,7 +1030,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(1 - ((node_memory_SwapFree_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"} + 1)/ (node_memory_SwapTotal_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"} + 1))) * 100",
@@ -1047,7 +1047,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -1106,7 +1106,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_load5{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -1125,7 +1125,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -1192,7 +1192,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1212,7 +1212,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -1275,7 +1275,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1295,7 +1295,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -1442,7 +1442,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1604,7 +1604,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -1689,7 +1689,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1712,7 +1712,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "gridPos": {
         "h": 1,
@@ -1726,7 +1726,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "refId": "A"
         }
@@ -1737,7 +1737,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -1804,7 +1804,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "avg(time() - node_boot_time_seconds{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"})",
@@ -1824,7 +1824,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -1892,7 +1892,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "100 - (avg(rate(node_cpu_seconds_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",mode=\"idle\"}[$interval])) * 100)",
@@ -1904,7 +1904,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(1 - (node_memory_MemAvailable_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"} / (node_memory_MemTotal_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"})))* 100",
@@ -1916,7 +1916,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(node_filesystem_size_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"}-node_filesystem_free_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"})*100 /(node_filesystem_avail_bytes {cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"}+(node_filesystem_size_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"}-node_filesystem_free_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint=\"/\"}))",
@@ -1929,7 +1929,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(1 - ((node_memory_SwapFree_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"} + 1)/ (node_memory_SwapTotal_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"} + 1))) * 100",
@@ -1945,7 +1945,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "In this kanban: the total disk, usage, available, and usage rate are consistent with the values of the Size, Used, Avail, and Use% columns of the df command, and the value of Use% will be rounded to one decimal place, which will be more accurate .\n\nNote: The Use% algorithm in df is: (size-free) * 100 / (avail + (size-free)), the result is divisible by this value, non-divisible by this value is +1, and the unit of the result is %.\nRefer to the df command source code:",
       "fieldConfig": {
@@ -2201,7 +2201,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_filesystem_size_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-0",
@@ -2216,7 +2216,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_filesystem_avail_bytes {cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-0",
@@ -2231,7 +2231,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(node_filesystem_size_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-node_filesystem_free_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}) *100/(node_filesystem_avail_bytes {cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}+(node_filesystem_size_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-node_filesystem_free_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}))",
@@ -2283,7 +2283,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -2349,7 +2349,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum(node_memory_MemTotal_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"})",
@@ -2368,7 +2368,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -2433,7 +2433,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "count(node_cpu_seconds_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\", mode='system'})",
@@ -2452,7 +2452,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -2778,7 +2778,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "avg(rate(node_cpu_seconds_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",mode=\"system\"}[$__rate_interval])) by (cliente, entorno, srvhostname) *100",
@@ -2794,7 +2794,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "avg(rate(node_cpu_seconds_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",mode=\"user\"}[$__rate_interval])) by (cliente, entorno, srvhostname) *100",
@@ -2810,7 +2810,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "avg(rate(node_cpu_seconds_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",mode=\"iowait\"}[$__rate_interval])) by (cliente, entorno, srvhostname) *100",
@@ -2826,7 +2826,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(1 - avg(rate(node_cpu_seconds_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",mode=\"idle\"}[$__rate_interval])) by (cliente, entorno, srvhostname))*100",
@@ -2846,7 +2846,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -3127,7 +3127,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_MemTotal_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -3143,7 +3143,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3160,7 +3160,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_MemAvailable_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -3176,7 +3176,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_Buffers_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -3192,7 +3192,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_MemFree_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -3207,7 +3207,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_Cached_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -3222,7 +3222,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_MemTotal_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"} - (node_memory_Cached_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"} + node_memory_Buffers_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"} + node_memory_MemFree_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"})",
@@ -3235,7 +3235,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(1 - (node_memory_MemAvailable_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"} / (node_memory_MemTotal_bytes{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"})))* 100",
@@ -3254,7 +3254,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "description": "$cliente $entorno $srvhostname",
       "fieldConfig": {
@@ -3380,7 +3380,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum(rate(container_network_receive_bytes_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",id=\"/\"}[30s])) by (id, cliente, entorno, srvhostname)",
@@ -3394,7 +3394,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "- sum(rate(container_network_transmit_bytes_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\",id=\"/\"}[30s])) by (id, cliente, entorno, srvhostname)",
@@ -3412,7 +3412,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "HY5hKHT4k"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -3558,7 +3558,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_load1{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -3575,7 +3575,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_load5{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -3590,7 +3590,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_load15{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"}",
@@ -3605,7 +3605,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "HY5hKHT4k"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": " sum(count(node_cpu_seconds_total{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\", mode='system'}) by (cpu,srvhostname)) by(srvhostname)",
@@ -3644,7 +3644,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "HY5hKHT4k"
+          "uid": "prometheus"
         },
         "definition": "label_values(cliente)",
         "hide": 0,
@@ -3674,7 +3674,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "HY5hKHT4k"
+          "uid": "prometheus"
         },
         "definition": "label_values({cliente=~\"$cliente\"}, entorno)",
         "hide": 0,
@@ -3704,7 +3704,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "HY5hKHT4k"
+          "uid": "prometheus"
         },
         "definition": "label_values({cliente=~\"$cliente\",entorno=~\"$entorno\"}, srvhostname)",
         "hide": 0,
@@ -3739,7 +3739,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "HY5hKHT4k"
+          "uid": "prometheus"
         },
         "definition": "label_values(node_network_info{cliente=~\"$cliente\",device!~'tap.*|veth.*|br.*|docker.*|virbr.*|lo.*|cni.*'},device)",
         "hide": 0,
@@ -3775,7 +3775,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "HY5hKHT4k"
+          "uid": "prometheus"
         },
         "definition": "label_values(node_uname_info{cliente=~\"$cliente\",entorno=~\"$entorno\",srvhostname=~\"$srvhostname\"},instance)",
         "hide": 2,
@@ -3806,7 +3806,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "HY5hKHT4k"
+          "uid": "prometheus"
         },
         "definition": "query_result(topk(1,sort_desc (max(node_filesystem_size_bytes{cliente=~\"$cliente\",instance=~'$node',fstype=~\"ext.?|xfs\",mountpoint!~\".*pods.*\"}) by (mountpoint))))",
         "hide": 2,
@@ -3836,7 +3836,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "HY5hKHT4k"
+          "uid": "prometheus"
         },
         "definition": "query_result(count(node_uname_info{cliente=~\"$cliente\",entorno=~\"$entorno\"}))",
         "hide": 2,
