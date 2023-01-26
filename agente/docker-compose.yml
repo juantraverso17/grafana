@@ -66,9 +66,7 @@ services:
       - "9417:8080"
 
   blackbox_exporter:
-    image: bitnami/blackbox-exporter:0.23.0
+    image: quay.io/prometheus/blackbox-exporter:v0.23.0
     container_name: blackbox_exporter
-    volumes:
-        - './blackbox.yml:/opt/bitnami/blackbox-exporter/conf/config.yml'
     ports:
       - "9115:9115"
