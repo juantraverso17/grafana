@@ -12,9 +12,9 @@ scrape_configs:
         - '{__name__=~".+"}'
     static_configs:
       # ------------------------------------- #
-      - targets: [ '192.168.1.150:9091']
+      - targets: [ '192.168.1.150:9090']
         labels:
           cliente: Accusys
           entorno: Homologacion
-          srvhostname: homo-srv-01
+          srvhostname: SRV-HOMO-01
       # ------------------------------------- #
