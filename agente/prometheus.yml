@@ -19,10 +19,6 @@ scrape_configs:
       - targets: ['docker_state_exporter:8080']
 
   - job_name: 'blackbox'
-    static_configs:
-      - targets: ['blackbox_exporter:9115']
-
-  - job_name: 'blackbox'
     metrics_path: /probe
     params:
       module: [http_2xx]  # Look for a HTTP 200 response.
