@@ -19,23 +19,19 @@ scrape_configs:
       - targets: ['docker_state_exporter:8080']
 
   - job_name: 'blackbox'
-      metrics_path: /probe
-      params:
+    metrics_path: /probe
+    params:
       module: [http_2xx]  # Look for a HTTP 200 response.
-      target_groups:
+    static_configs:
       - targets:
-          - prometheus.io   # Target to probe
-          - www.accusys.com.ar
-      relabel_configs:
+        - http://prometheus.io    # Target to probe with http.
+        - https://prometheus.io   # Target to probe with https.
+        - http://example.com:8080 # Target to probe with http on port 8080.
+        - https://www.accusys.com.ar
+    relabel_configs:
       - source_labels: [__address__]
-          regex: (.*)(:80)?
-          target_label: __param_target
-          replacement: ${1}
+        target_label: __param_target
       - source_labels: [__param_target]
-          regex: (.*)
-          target_label: instance
-          replacement: ${1}
-      - source_labels: []
-          regex: .*
-          target_label: __address__
-          replacement: blackbox_exporter:9115  # Blackbox exporter.
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox_exporter:9115  # The blackbox exporter's real hostname:port.
