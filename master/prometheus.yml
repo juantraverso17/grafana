@@ -15,6 +15,6 @@ scrape_configs:
       - targets: [ '192.168.1.150:9090']
         labels:
           cliente: Accusys
-          entorno: Homologacion
+          entorno: Homologación
           srvhostname: SRV-HOMO-01
       # ------------------------------------- #
