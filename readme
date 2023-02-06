@@ -1,4 +1,22 @@
-1. Copiar el fichero daemon.json a /etc/docker/daemon.json
-2. Reiniciar el servicio de docker con "sudo systemctl restart docker"
-2. Editar el fichero .env y adaptarlo a nuestro entorno
-3. Levantar los contenedores
+INSTALACIÓN
+
+La aplicación está preparada para funcionar de forma conjunta un agente y un master en un mismo servidor,
+como así tambien tener la posibilidad de solamente hacer uso del agente y conectarlo con un master en otro servidor.
+El unico requisito es que los mismos deben ser visible por capa 3.
+
+1. INSTALAR LOKI PLUGIN PARA AGENTE
+    1.1 Ejecutamos el siguietne comando: "docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions"
+
+2. MODIFICAR EL DEMONIO DE DOCKER
+    2.1. Copiar el contenido del fichero "./agente/daemon.json" y pegarlo en "/etc/docker/daemon.json"
+    2.2. Editar "/etc/docker/daemon.json" cambiar "<IPLoki>" por la ip del servidor master (en caso de instalar el master en el mismo servidor
+    debemos usar "localhost")
+    2.3. Aplicar los cambios al servicio de docker con el comando "sudo systemctl restart docker.service"
+
+3. INICIAR EL AGENTE
+    3.1. Editar el fichero "./agente/.env", debemos descomentar el entorno que vamos a utilizar y configurar los demas parametros
+    3.2. Ejecutamos "docker compose up -d"
+ 
+4. INICIAR EL MASTER
+    4.1. Editamos el "./master/prometheus.yml" donde debemos ingresar los datos del agente (ip, cliente, entorno, hostname).
+    4.2. Ejecutamos "docker compose up -d"
