@@ -27,7 +27,7 @@ datasources:
     uid: prometheus
     # <string> Sets the data source's URL, including the
     # port.
-    url: http://prometheus-master:9090
+    url: http://prometheus-master:9091
     # for new panels. You can set only one default
     # data source per organization.
     isDefault: 1
